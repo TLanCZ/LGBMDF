@@ -1,0 +1,12 @@
+[ 2022-03-10 15:41:40,764][cascade_classifier.fit_transform] X_groups_train.shape=[(8960, 1650)],y_train.shape=(8960,),X_groups_test.shape=no_test,y_test.shape=no_test
+[ 2022-03-10 15:41:40,796][cascade_classifier.fit_transform] group_dims=[1650]
+[ 2022-03-10 15:41:40,796][cascade_classifier.fit_transform] group_starts=[0]
+[ 2022-03-10 15:41:40,796][cascade_classifier.fit_transform] group_ends=[1650]
+[ 2022-03-10 15:41:40,796][cascade_classifier.fit_transform] X_train.shape=(8960, 1650),X_test.shape=(0, 1650)
+[ 2022-03-10 15:41:40,811][cascade_classifier.fit_transform] [layer=0] look_indexs=[0], X_cur_train.shape=(8960, 1650), X_cur_test.shape=(0, 1650)
+[ 2022-03-10 15:46:26,373][cascade_classifier.fit_transform] X_groups_train.shape=[(8960, 1650)],y_train.shape=(8960,),X_groups_test.shape=no_test,y_test.shape=no_test
+[ 2022-03-10 15:46:26,405][cascade_classifier.fit_transform] group_dims=[1650]
+[ 2022-03-10 15:46:26,405][cascade_classifier.fit_transform] group_starts=[0]
+[ 2022-03-10 15:46:26,405][cascade_classifier.fit_transform] group_ends=[1650]
+[ 2022-03-10 15:46:26,405][cascade_classifier.fit_transform] X_train.shape=(8960, 1650),X_test.shape=(0, 1650)
+[ 2022-03-10 15:46:26,421][cascade_classifier.fit_transform] [layer=0] look_indexs=[0], X_cur_train.shape=(8960, 1650), X_cur_test.shape=(0, 1650)
