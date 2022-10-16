@@ -1,6 +1,0 @@
-[ 2022-04-18 18:51:43,944][cascade_classifier.fit_transform] X_groups_train.shape=[(7964, 1650)],y_train.shape=(7964,),X_groups_test.shape=no_test,y_test.shape=no_test
-[ 2022-04-18 18:51:44,039][cascade_classifier.fit_transform] group_dims=[1650]
-[ 2022-04-18 18:51:44,054][cascade_classifier.fit_transform] group_starts=[0]
-[ 2022-04-18 18:51:44,058][cascade_classifier.fit_transform] group_ends=[1650]
-[ 2022-04-18 18:51:44,090][cascade_classifier.fit_transform] X_train.shape=(7964, 1650),X_test.shape=(0, 1650)
-[ 2022-04-18 18:51:44,201][cascade_classifier.fit_transform] [layer=0] look_indexs=[0], X_cur_train.shape=(7964, 1650), X_cur_test.shape=(0, 1650)
