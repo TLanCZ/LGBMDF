@@ -42,60 +42,19 @@ def get_toy_config():
           "num_leaves": 500, "max_depth": 9, 'learning_rate':0.1, "n_jobs": -1 })
     ca_config["estimators"].append({"n_folds": 5, "type": "LGBMClassifier",'objective':'binary',     
             "num_leaves": 500, "max_depth": 9, 'learning_rate':0.1, "n_jobs": -1 })
-    # ca_config["estimators"].append({"n_folds": 5, "type": "LGBMClassifier",'objective':'binary',     
-    #       "num_leaves":  500, "max_depth": 9, 'learning_rate':0.1, "n_jobs": -1 })
-    # ca_config["estimators"].append({"n_folds": 5, "type": "LGBMClassifier",'objective':'binary',     
-    #       "num_leaves":  500, "max_depth": 9, 'learning_rate':0.1, "n_jobs": -1 })
-    # ca_config["estimators"].append({"n_folds": 5, "type": "LGBMClassifier",'objective':'binary',     
-    #       "num_leaves": 500, "max_depth": 9, 'learning_rate':0.1, "n_jobs": -1 })
-    # ca_config["estimators"].append(
-    #         {"n_folds": 5, "type": "CatBoostClassifier",'task_type':'GPU',
-    #       'iterations':500,'depth':6,'loss_function': 'Logloss','learning_rate':0.1,
-    #       'logging_level':'Silent','grow_policy':'SymmetricTree','thread_count':-1 } )
-    # ca_config["estimators"].append(
-    #         {"n_folds": 5, "type": "CatBoostClassifier",'task_type':'GPU',
-    #       'iterations':500,'depth':6,'loss_function': 'Logloss','learning_rate':0.1,
-    #       'logging_level':'Silent','grow_policy':'SymmetricTree','thread_count':-1 } )
-    # ca_config["estimators"].append(
-    #         {"n_folds": 5, "type": "CatBoostClassifier",'task_type':'GPU',
-    #       'iterations':500,'depth':6,'loss_function': 'Logloss','learning_rate':0.1,
-    #       'logging_level':'Silent','grow_policy':'SymmetricTree','thread_count':-1 } )
-    # ca_config["estimators"].append(
-    #         {"n_folds": 5, "type": "XGBClassifier", "n_estimators": 500, "max_depth": 5,
-    #           "objective": "multi:softprob", #silent": True,
-    #           "nthread": -1, "learning_rate": 0.1,"num_class": 2} )
-    # ca_config["estimators"].append(
-    #         {"n_folds": 5, "type": "XGBClassifier", "n_estimators": 500, "max_depth": 5,
-    #           "objective": "multi:softprob", #"silent": True, 
-    #           "nthread": -1, "learning_rate": 0.1,"num_class": 2} )
+    
     
     ca_config["estimators"].append({"n_folds": 5, "type": "RandomForestClassifier", "n_estimators": 500, "max_depth": None, "n_jobs": -1})
     ca_config["estimators"].append({"n_folds": 5, "type": "RandomForestClassifier", "n_estimators": 500, "max_depth": None, "n_jobs": -1})
     ca_config["estimators"].append({"n_folds": 5, "type": "RandomForestClassifier", "n_estimators": 500, "max_depth": None, "n_jobs": -1})
-    # ca_config["estimators"].append({"n_folds": 5, "type": "RandomForestClassifier", "n_estimators": 500, "max_depth": None, "n_jobs": -1})
-    # ca_config["estimators"].append({"n_folds": 5, "type": "RandomForestClassifier", "n_estimators": 500, "max_depth": None, "n_jobs": -1})
-    # ca_config["estimators"].append({"n_folds": 5, "type": "RandomForestClassifier", "n_estimators": 500, "max_depth": None, "n_jobs": -1})
-    # ca_config["estimators"].append({"n_folds": 5, "type": "ExtraTreesClassifier", "n_estimators": 500, "max_depth": None, "n_jobs": -1})
-    # ca_config["estimators"].append({"n_folds": 5, "type": "ExtraTreesClassifier", "n_estimators": 500, "max_depth": None, "n_jobs": -1})
-    # ca_config["estimators"].append({"n_folds": 5, "type": "ExtraTreesClassifier", "n_estimators": 500, "max_depth": None, "n_jobs": -1})
-    # ca_config["estimators"].append({"n_folds": 5, "type": "ExtraTreesClassifier", "n_estimators": 500, "max_depth": None, "n_jobs": -1})
-
+    
     config["cascade"] = ca_config
     return config
 
 #Feature extracted from 15 networks by AROPE
-# drugFeature0 = np.loadtxt('100drugFeature.csv' ,dtype=str, delimiter=",")
-# drugFeature= drugFeature0[1:,]
-# proteinFeature0 =np.loadtxt('100proteinFeature.csv',dtype=str, delimiter=",")
-# proteinFeature= proteinFeature0[1:,]
 
-# drugFeature1=np.loadtxt('drug_feature.txt')
-# proteinFeature1=np.loadtxt('protein_feature.txt')
 drugFeature=np.loadtxt('drugFeature.txt')
 proteinFeature=np.loadtxt('proteinFeature.txt')
-
-# drugFeature = np.hstack((drugFeature1,drugFeature2))
-# proteinFeature = np.hstack((proteinFeature1,proteinFeature2))
 
 interaction=np.loadtxt('dataset/Networks/drugProtein.txt')
 
@@ -154,15 +113,6 @@ for train_index, test_index in kf.split(label[:,0]):
     print(aupr)
     test_auc_fold.append(roc_auc)
     test_aupr_fold.append(aupr)
-    # plt.figure()
-    # plt.plot(fpr, tpr, 'b', label='AUC = %0.2f' % roc_auc)
-    # plt.plot([0, 1], [0, 1],'r--')
-    # plt.xlim([0.0, 1.0])
-    # plt.ylim([0.0, 1.05])
-    # plt.xlabel('False Positive Rate')
-    # plt.ylabel('True Positive Rate')
-    # plt.title('Receiver operating characteristic example')
-    # plt.legend(loc="lower right")
 mean_auc=np.mean(test_auc_fold)
 mean_pr=np.mean(test_aupr_fold)
 print('mean auc aupr', mean_auc, mean_pr)
